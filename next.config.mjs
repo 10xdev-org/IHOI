@@ -1,16 +1,7 @@
-import path from "path";
-
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "standalone",
+  output: "export",
   assetPrefix: "./",
-  async rewrites() {
-    return [
-      {
-        source: "/external_contents/:path*",
-        destination: "/api/external/:path*", // Map to the new API route
-      },
-    ];
-  },
 };
 
 export default nextConfig;
