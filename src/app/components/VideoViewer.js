@@ -40,7 +40,7 @@ const VideoViewer = ({ video, onClose }) => {
       </div>
       <button
         onClick={onClose}
-        className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-black/50 text-white rounded-full w-32 h-32 flex items-center justify-center hover:bg-black/70 focus:outline-none focus:ring focus:ring-white"
+        className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-black/50 text-white rounded-full w-32 h-32 flex flex-col items-center justify-center hover:bg-black/70 focus:outline-none focus:ring focus:ring-white"
         style={{
           borderTopLeftRadius: "50%",
           borderBottomLeftRadius: "50%",
@@ -49,7 +49,8 @@ const VideoViewer = ({ video, onClose }) => {
           left: "0px", // Ensures the circular part sticks out
         }}
       >
-        <ChevronsLeft className="w-10 h-10 transform -translate-x-2" />
+        {/* <ChevronsLeft className="w-10 h-10 transform -translate-x-2" /> */}
+        Back
       </button>
     </Modal>
   );
