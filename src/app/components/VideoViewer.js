@@ -17,6 +17,10 @@ const VideoViewer = ({ video, onClose }) => {
     };
   }, [video, setScreensaverDisabled]);
 
+  const formattedSrc = video.src
+    ? video.src.replace(/ /g, "%20").replace(/'/g, "%27")
+    : null;
+
   return (
     <Modal onClose={onClose}>
       <div className="flex flex-col h-full">
@@ -26,7 +30,7 @@ const VideoViewer = ({ video, onClose }) => {
           style={{ maxHeight: "calc(100vh)" }}
         >
           <video
-            src={video.path}
+            src={formattedSrc}
             controls
             className="w-full h-full"
             title={video.name}

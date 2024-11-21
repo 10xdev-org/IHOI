@@ -16,7 +16,7 @@ export default function initialContentLoader() {
 
   try {
     // Path to the external_contents directory
-    const baseDir = path.join(process.cwd(), "external_contents");
+    const baseDir = path.join(process.cwd(), "public", "external_contents");
     const filePath = path.join(baseDir, "appContent.json");
 
     // Check if appContent.json exists and load its data
@@ -28,8 +28,8 @@ export default function initialContentLoader() {
       const updatedContent = {
         videos: content.videos.map((video) => ({
           ...video,
-          thumbnail: `/external_contents/images/${video.thumbnail}`,
-          path: `/external_contents/videos/${video.path}`,
+          thumbnail: `./external_contents/${video.thumbnail}`,
+          src: `./external_contents/${video.src}`,
         })),
       };
 
