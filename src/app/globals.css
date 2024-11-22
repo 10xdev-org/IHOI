@@ -6,6 +6,18 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+body::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for WebKit-based browsers (Chrome, Safari, etc.) */
+}
+
+body {
+  -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+}
+
+video::-webkit-media-controls-fullscreen-button {
+  display: none;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -167,4 +179,3 @@ body {
 .box:hover {
   transform: scale(1.1);
 }
-

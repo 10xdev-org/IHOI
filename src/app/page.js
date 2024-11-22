@@ -17,7 +17,7 @@ export default function Page() {
   };
 
   return (
-    <div className="flex-grow overflow-hidden pb-12">
+    <div className="flex-grow overflow-hidden">
       <Landing handleVideoClick={handleVideoClick} videos={appContent.videos} />
       {selectedVideo && (
         <VideoViewer video={selectedVideo || {}} onClose={handleVideoClose} />
