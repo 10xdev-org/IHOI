@@ -47,7 +47,7 @@ const quotes = [
   },
 ];
 
-const Screensaver = ({ idleTimeout = 15000, quoteInterval = 5000 }) => {
+const Screensaver = ({ idleTimeout = 1000, quoteInterval = 5000 }) => {
   const { screensaverDisabled, setScreensaverDisabled } =
     useScreensaverContext();
   const [isIdle, setIsIdle] = useState(false);
@@ -101,17 +101,25 @@ const Screensaver = ({ idleTimeout = 15000, quoteInterval = 5000 }) => {
             muted
             playsInline
           />
-          {/* <Overlay animate /> */}
-          {/* <div className="absolute bottom-5 z-20 w-full text-center px-4">
-            <div className="bg-blue-500 bg-opacity-0 rounded-lg p-4">
-              <p className="text-2xl font-serif italic text-yellow-300 transition-all duration-300 ease-in-out">
-                &quot;{quotes[currentQuoteIndex].text}&quot;{" "}
-              </p>
-              <p className="mt-2 text-xl font-semibold text-gray-200">
-                - {quotes[currentQuoteIndex].author}
-              </p>
+
+          {/* Overlay over the video */}
+          <div className="absolute inset-0 bg-black bg-opacity-95 z-40"></div>
+
+          {/* Content layout */}
+          <div className="w-fullh-full absolute inset-0 flex">
+            {/* Left Half - Logo */}
+            <div className="w-1/2 flex items-center justify-center z-50">
+              <img src="./logo.png" alt="Logo" className=" h-auto w-[30vw]" />
             </div>
-          </div> */}
+
+            {/* Right Half - Text */}
+            <div className="w-1/2 h-full flex items-center justify-center w-[70vw] text-center z-50 px-4">
+              <h1 className="text-6xl font-bold text-white">
+                It happens only in{" "}
+                <span className="text-yellow-500">INDIA</span>
+              </h1>
+            </div>
+          </div>
         </div>
       )}
     </>
