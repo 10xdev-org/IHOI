@@ -106,14 +106,14 @@ const Screensaver = ({ idleTimeout = 100000, quoteInterval = 5000 }) => {
           <div className="absolute inset-0 bg-black bg-opacity-95 z-40"></div>
 
           {/* Content layout */}
-          <div className="w-fullh-full absolute inset-0 flex">
+          <div className="w-full h-full absolute inset-0 flex">
             {/* Left Half - Logo */}
             <div className="w-1/2 flex items-center justify-center z-50">
               <img src="./logo.png" alt="Logo" className=" h-auto w-[30vw]" />
             </div>
 
             {/* Right Half - Text */}
-            <div className="w-1/2 h-full flex items-center justify-center w-[70vw] text-center z-50 px-4">
+            <div className="w-1/2 h-full flex items-center justify-center text-center z-50 px-4">
               <h1 className="text-6xl font-bold text-white">
                 It happens only in{" "}
                 <span className="text-yellow-500">INDIA</span>
