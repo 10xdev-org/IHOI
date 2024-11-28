@@ -15,16 +15,16 @@ const pastelColors = [
 ];
 
 // Function to determine color based on Video name
-const getColorFromName = (name) => {
-  const hash = [...name].reduce((acc, char) => acc + char.charCodeAt(0), 0);
+const getColorFromText = (txt) => {
+  const hash = [...txt].reduce((acc, char) => acc + char.charCodeAt(0), 0);
   return pastelColors[hash % pastelColors.length];
 };
 
-function VideoCard({ vid, openVid }) {
-  const formattedThumbnail = vid.thumbnail
-    ? vid.thumbnail.replace(/ /g, "%20").replace(/'/g, "%27")
+function VideoCard({ name = "", thumbnail, src, openVid }) {
+  const formattedThumbnail = thumbnail
+    ? thumbnail.replace(/ /g, "%20").replace(/'/g, "%27")
     : null;
-  const bgColor = getColorFromName(vid.name);
+  const bgColor = getColorFromText(name);
 
   return (
     <div
@@ -49,16 +49,16 @@ function VideoCard({ vid, openVid }) {
         </div>
 
         {/* Optional Video Duration (conditionally render if exists) */}
-        {vid.duration && (
+        {/* {duration && (
           <div className="absolute bottom-2 right-2 text-white text-xs">
-            {vid.duration}
+            {duration}
           </div>
-        )}
+        )} */}
       </div>
 
       {/* Video name below the rectangle with hover effect */}
-      <div className="text-center text-lg font-medium text-gray-900 group-hover:text-orange-800 group-hover:underline">
-        {vid.name}
+      <div className="text-center w-64 px-4 text-lg font-medium text-gray-900 group-hover:text-orange-800 group-hover:underline">
+        {name}
       </div>
     </div>
   );

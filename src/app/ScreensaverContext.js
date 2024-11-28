@@ -4,13 +4,11 @@ import { createContext, useContext, useState } from "react";
 
 const ScreensaverContext = createContext();
 
-export const ScreensaverProvider = ({ children, initialContent }) => {
+export const ScreensaverProvider = ({ children }) => {
   const [screensaverDisabled, setScreensaverDisabled] = useState(false);
-  const [appContent, setAppContent] = useState(initialContent);
-
   return (
     <ScreensaverContext.Provider
-      value={{ screensaverDisabled, setScreensaverDisabled, appContent }}
+      value={{ screensaverDisabled, setScreensaverDisabled }}
     >
       {children}
     </ScreensaverContext.Provider>
