@@ -62,7 +62,7 @@ const Screensaver = ({ idleTimeout = 100000 }) => {
                 It happens only in{" "}
                 <span className="text-yellow-500">INDIA</span>
               </h1>
-              <button className="text-2xl mt-10 px-4 py-2 border-2 border-yellow-500 text-yellow-500 bg-transparent rounded-lg">
+              <button className="text-4xl mt-10 px-4 py-2 border-2 border-yellow-500 text-yellow-500 bg-transparent rounded-lg">
                 Tap to Start
               </button>
             </div>

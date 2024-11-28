@@ -18,22 +18,28 @@ const Landing = ({ videos, naveenJindalVideo, handleVideoClick }) => {
           vid={video}
           openVid={() => handleVideoClick(video)} // Pass the video data to the click handler
         /> */}
-        <div className="h-[40vh] w-full flex flex-row items-start justify-between p-16 bg-transparent text-gray-700">
-          <div className="flex flex-col items-center justify-center">
-            <h1 className="text-lg md:text-xl mb-2">It happens only in</h1>
-            <h2 className="text-5xl md:text-7xl font-bold mb-2">INDIA</h2>
-            <p className="text-lg md:text-xl italic text-gray-300 max-w-lg p-3 rounded bg-black bg-opacity-30">
+        <div className="h-[40vh] w-full grid grid-cols-4 items-start justify-between py-16 bg-transparent text-gray-700 gap-4">
+          {/* First three columns for text */}
+          <div className="col-span-2 flex flex-col items-center justify-center space-y-4">
+            <h1 className="text-lg md:text-xl">It happens only in</h1>
+            <h2 className="text-5xl md:text-7xl font-bold">INDIA</h2>
+            <p className="text-lg md:text-xl italic text-gray-300 max-w-lg p-3 rounded bg-black bg-opacity-30 text-center">
               Explore Landmark events and case histories.
             </p>
           </div>
+          <div className="col-span-1"> </div>
+
+          {/* Fourth column for VideoCard */}
           {naveenJindalVideo && (
-            <VideoCard
-              key={naveenJindalVideo?.name} // Use a unique identifier for each naveenJindalVideo
-              name={naveenJindalVideo?.name}
-              src={naveenJindalVideo?.src}
-              thumbnail={naveenJindalVideo?.thumbnail}
-              openVid={() => handleVideoClick(naveenJindalVideo)}
-            />
+            <div className="flex items-center justify-center">
+              <VideoCard
+                key={naveenJindalVideo?.name} // Use a unique identifier for each naveenJindalVideo
+                name={naveenJindalVideo?.name}
+                src={naveenJindalVideo?.src}
+                thumbnail={naveenJindalVideo?.thumbnail}
+                openVid={() => handleVideoClick(naveenJindalVideo)}
+              />
+            </div>
           )}
         </div>
       </div>
