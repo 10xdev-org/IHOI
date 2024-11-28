@@ -23,7 +23,7 @@ const VideoViewer = ({ video, onClose }) => {
     const player = playerRef.current.getInternalPlayer();
     if (player && typeof player.setPlaybackQuality === "function") {
       // Set the minimum playback quality to 720p
-      player.setPlaybackQuality("hd480");
+      player.setPlaybackQuality("hd1080");
     }
   };
 
