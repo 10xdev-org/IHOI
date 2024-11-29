@@ -55,7 +55,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: windows-release
-          path: src-tauri/target/release/bundle/
+          path: src-tauri/target/release/bundle/nsis
 
       # - name: Check for Existing Release
       #   id: check_release
